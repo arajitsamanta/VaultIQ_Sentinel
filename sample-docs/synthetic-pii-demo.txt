@@ -1,0 +1,5 @@
+SYNTHETIC TEST DATA — DO NOT USE REAL PERSONAL INFORMATION
+
+This document exists only to demonstrate Sentinel redaction behavior.
+Demo contact: Example Person, email test@example.com, phone 415-555-2671.
+Synthetic SSN for test matching only: 123-45-6789.

@@ -1,0 +1,11 @@
+services:
+  sentinel:
+    build: .
+    ports:
+      - "${PORT:-8081}:8081"
+    environment:
+      PORT: 8081
+      VAULTIQ_BASE_URL: ${VAULTIQ_BASE_URL:-http://host.docker.internal:8080}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-http://host.docker.internal:11434/v1}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-ollama}
+      OPENAI_CHAT_MODEL: ${OPENAI_CHAT_MODEL:-llama3.2}

@@ -1,0 +1,36 @@
+cases:
+  - id: pto-policy
+    question: "What is the annual paid time off policy?"
+    expectedKeywords: ["20 days", "paid time off"]
+    minKeywords: 1
+    maxLatencyMs: 20000
+  - id: rollover-policy
+    question: "How much PTO can be rolled over and when must it be used?"
+    expectedKeywords: ["5 days", "March 31"]
+    minKeywords: 1
+    maxLatencyMs: 20000
+  - id: remote-work
+    question: "How many days per week may eligible employees work remotely?"
+    expectedKeywords: ["3 days", "manager approval"]
+    minKeywords: 1
+    maxLatencyMs: 20000
+  - id: wellness-stipend
+    question: "How much is the annual health and wellness stipend?"
+    expectedKeywords: ["$1,200", "$100"]
+    minKeywords: 1
+    maxLatencyMs: 20000
+  - id: learning-budget
+    question: "What is the annual learning and development budget?"
+    expectedKeywords: ["$2,500"]
+    minKeywords: 1
+    maxLatencyMs: 20000
+  - id: security-keys
+    question: "What authentication method is required for internal SSO?"
+    expectedKeywords: ["FIDO2", "WebAuthn"]
+    minKeywords: 1
+    maxLatencyMs: 20000
+  - id: out-of-domain
+    question: "What is the capital of Mars?"
+    expectedKeywords: ["could not find"]
+    minKeywords: 1
+    maxLatencyMs: 20000

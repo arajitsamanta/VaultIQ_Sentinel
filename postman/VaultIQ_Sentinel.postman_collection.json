@@ -1,0 +1,48 @@
+{
+  "info": {
+    "name": "VaultIQ Sentinel",
+    "description": "Guarded chat, regression, metrics, and red-team endpoints.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "sentinelUrl", "value": "http://localhost:8081" }
+  ],
+  "item": [
+    {
+      "name": "Guarded chat",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"What is the annual paid time off policy?\"\n}"
+        },
+        "url": "{{sentinelUrl}}/sentinel/chat"
+      }
+    },
+    {
+      "name": "Run golden regression",
+      "request": { "method": "POST", "url": "{{sentinelUrl}}/sentinel/evals/regression/run" }
+    },
+    {
+      "name": "Latest regression report",
+      "request": { "method": "GET", "url": "{{sentinelUrl}}/sentinel/evals/regression/latest" }
+    },
+    {
+      "name": "Metrics",
+      "request": { "method": "GET", "url": "{{sentinelUrl}}/sentinel/metrics" }
+    },
+    {
+      "name": "Red-team prompts",
+      "request": { "method": "GET", "url": "{{sentinelUrl}}/sentinel/redteam" }
+    },
+    {
+      "name": "Run red-team suite",
+      "request": { "method": "POST", "url": "{{sentinelUrl}}/sentinel/redteam/run" }
+    },
+    {
+      "name": "Active guardrails",
+      "request": { "method": "GET", "url": "{{sentinelUrl}}/sentinel/guardrails" }
+    }
+  ]
+}

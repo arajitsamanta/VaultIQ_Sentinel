@@ -1,0 +1,53 @@
+server:
+  port: ${PORT:8081}
+
+spring:
+  application:
+    name: vaultiq-sentinel
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+sentinel:
+  vaultiq-base-url: ${VAULTIQ_BASE_URL:http://localhost:8080}
+  model: ${OPENAI_CHAT_MODEL:llama3.2}
+  llm:
+    base-url: ${OPENAI_BASE_URL:http://localhost:11434/v1}
+    api-key: ${OPENAI_API_KEY:ollama}
+    temperature: ${OPENAI_TEMPERATURE:0.0}
+  pii:
+    model-pass: false
+    rules:
+      - label: SSN
+        pattern: '(?<!\d)\d{3}-\d{2}-\d{4}(?!\d)'
+      - label: CREDIT_CARD
+        pattern: '(?<!\d)(?:\d[ -]*?){13,16}(?!\d)'
+      - label: EMAIL
+        pattern: '\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b'
+      - label: PHONE
+        pattern: '(?<![A-Z0-9])(?:\+?1[ -]?)?(?:\(\d{3}\)|\d{3})[ -.]?\d{3}[ -.]?\d{4}(?![A-Z0-9])'
+      - label: API_KEY
+        pattern: '\bsk-[A-Za-z0-9_-]{16,}\b'
+  injection-patterns:
+    - '(?i)override\s+(?:all\s+)?(?:the\s+)?(?:system|safety)\s+instructions'
+    - '(?i)print\s+(?:your|the)\s+(?:hidden\s+)?(?:system\s+)?prompt'
+  grounding:
+    min-score: ${SENTINEL_GROUNDING_MIN_SCORE:0.5}
+    fallback: "I could not find the answer in the provided documents."
+  pricing:
+    input-per1k: ${SENTINEL_INPUT_PRICE_PER_1K:0.0}
+    output-per1k: ${SENTINEL_OUTPUT_PRICE_PER_1K:0.0}
+  budget:
+    daily-usd-cap: ${SENTINEL_DAILY_USD_CAP:5.0}
