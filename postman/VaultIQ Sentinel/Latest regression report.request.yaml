@@ -1,4 +1,0 @@
-$kind: http-request
-url: "{{sentinelUrl}}/sentinel/evals/regression/latest"
-method: GET
-order: 3000

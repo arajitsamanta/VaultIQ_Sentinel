@@ -1,4 +1,0 @@
-$kind: http-request
-url: "{{sentinelUrl}}/sentinel/evals/regression/run"
-method: POST
-order: 2000

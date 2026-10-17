@@ -1,4 +1,0 @@
-$kind: http-request
-url: "{{sentinelUrl}}/sentinel/redteam"
-method: GET
-order: 5000

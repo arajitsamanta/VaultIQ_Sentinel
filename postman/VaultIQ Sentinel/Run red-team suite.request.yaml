@@ -1,4 +1,0 @@
-$kind: http-request
-url: "{{sentinelUrl}}/sentinel/redteam/run"
-method: POST
-order: 6000

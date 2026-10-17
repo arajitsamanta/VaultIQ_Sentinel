@@ -5,3 +5,7 @@ workspace:
 localResources:
   collections:
     - ../VaultIQ Sentinel
+
+cloudResources:
+  collections:
+    ../postman/collections/VaultIQ API — RAG Document Q&A Service: 7badfbe3-a319-4b08-a490-dd5265519d75
