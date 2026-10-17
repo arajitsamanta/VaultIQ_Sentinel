@@ -36,15 +36,13 @@ configured Ollama/OpenAI-compatible model endpoint.
 ## Quickstart
 
 Prerequisites: Java 17, Docker (optional), a running VaultIQ API, and Ollama
-with `llama3.2` available (or an OpenAI-compatible chat endpoint). No separate
-Maven installation is required; the wrapper downloads Maven 3.9.9 on first use.
+with `llama3.2` available (or an OpenAI-compatible chat endpoint).
 
-From this directory, use the Maven wrapper (on Windows, use `mvnw.cmd` instead
-of `./mvnw`):
+From this directory, use the VaultIQ Maven wrapper with Sentinel's POM:
 
 ```bash
-./mvnw test
-./mvnw spring-boot:run
+../VaultIQ/mvnw -f pom.xml test
+../VaultIQ/mvnw -f pom.xml spring-boot:run
 ```
 
 VaultIQ should listen on `http://localhost:8080`; Sentinel listens on
@@ -52,11 +50,11 @@ VaultIQ should listen on `http://localhost:8080`; Sentinel listens on
 your environment. To build and run the standalone container:
 
 ```bash
-./mvnw package
+../VaultIQ/mvnw -f pom.xml package
 docker compose up --build
 ```
 
-The demo policy for the golden suite is [../VaultIQ/docs/company-policy.txt](../VaultIQ/docs/company-policy.txt).
+The demo policy for the golden suite is [sample-docs/company-policy.txt](sample-docs/company-policy.txt).
 Ingest it into VaultIQ before running the live suite. The optional
 [synthetic PII fixture](sample-docs/synthetic-pii-demo.txt) is clearly labeled
 as test data and should only be used for demonstrations.
@@ -145,11 +143,11 @@ is a demonstration fixture, not a comprehensive adversarial evaluation.
 
 ## Tests
 
-Run `./mvnw test`. The unit tests cover PII patterns and
+Run `../VaultIQ/mvnw -f pom.xml test`. The unit tests cover PII patterns and
 Luhn behavior, common injection patterns and a benign false-positive case,
 cost arithmetic, and the regression report path without a live model.
 
 ## License
 
-This scaffold is licensed under the GNU General Public License v3.0. See
-[LICENSE](LICENSE).
+This scaffold follows the VaultIQ repository's license; see
+[../VaultIQ/LICENSE](../VaultIQ/LICENSE).
