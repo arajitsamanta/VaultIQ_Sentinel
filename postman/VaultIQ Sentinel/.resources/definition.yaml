@@ -1,0 +1,4 @@
+$kind: collection
+description: Guarded chat, regression, metrics, and red-team endpoints.
+variables:
+  sentinelUrl: http://localhost:8081

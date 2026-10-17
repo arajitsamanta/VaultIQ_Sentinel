@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{sentinelUrl}}/sentinel/metrics"
+method: GET
+order: 4000

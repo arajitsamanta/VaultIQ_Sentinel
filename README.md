@@ -36,13 +36,15 @@ configured Ollama/OpenAI-compatible model endpoint.
 ## Quickstart
 
 Prerequisites: Java 17, Docker (optional), a running VaultIQ API, and Ollama
-with `llama3.2` available (or an OpenAI-compatible chat endpoint).
+with `llama3.2` available (or an OpenAI-compatible chat endpoint). No separate
+Maven installation is required; the wrapper downloads Maven 3.9.9 on first use.
 
-From this directory, use the VaultIQ Maven wrapper with Sentinel's POM:
+From this directory, use the Maven wrapper (on Windows, use `mvnw.cmd` instead
+of `./mvnw`):
 
 ```bash
-../VaultIQ/mvnw -f pom.xml test
-../VaultIQ/mvnw -f pom.xml spring-boot:run
+./mvnw test
+./mvnw spring-boot:run
 ```
 
 VaultIQ should listen on `http://localhost:8080`; Sentinel listens on
@@ -50,7 +52,7 @@ VaultIQ should listen on `http://localhost:8080`; Sentinel listens on
 your environment. To build and run the standalone container:
 
 ```bash
-../VaultIQ/mvnw -f pom.xml package
+./mvnw package
 docker compose up --build
 ```
 
@@ -143,11 +145,11 @@ is a demonstration fixture, not a comprehensive adversarial evaluation.
 
 ## Tests
 
-Run `../VaultIQ/mvnw -f pom.xml test`. The unit tests cover PII patterns and
+Run `./mvnw test`. The unit tests cover PII patterns and
 Luhn behavior, common injection patterns and a benign false-positive case,
 cost arithmetic, and the regression report path without a live model.
 
 ## License
 
-This scaffold follows the VaultIQ repository's license; see
-[../VaultIQ/LICENSE](../VaultIQ/LICENSE).
+This scaffold is licensed under the GNU General Public License v3.0. See
+[LICENSE](LICENSE).

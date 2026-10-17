@@ -1,0 +1,7 @@
+# Use this workspace to collaborate
+workspace:
+  id: ae6c05b5-b2d6-403b-8192-111a5c1b0a15
+
+localResources:
+  collections:
+    - ../VaultIQ Sentinel

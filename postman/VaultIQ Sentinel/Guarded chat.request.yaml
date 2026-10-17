@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{sentinelUrl}}/sentinel/chat"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "question": "What is the annual paid time off policy?"
+    }
+order: 1000

@@ -1,0 +1,4 @@
+$kind: http-request
+url: "{{sentinelUrl}}/sentinel/guardrails"
+method: GET
+order: 7000
