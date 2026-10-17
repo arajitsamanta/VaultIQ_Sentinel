@@ -41,8 +41,8 @@ with `llama3.2` available (or an OpenAI-compatible chat endpoint).
 From this directory, use the VaultIQ Maven wrapper with Sentinel's POM:
 
 ```bash
-../VaultIQ/mvnw -f pom.xml test
-../VaultIQ/mvnw -f pom.xml spring-boot:run
+./mvnw -f pom.xml test
+./mvnw -f pom.xml spring-boot:run
 ```
 
 VaultIQ should listen on `http://localhost:8080`; Sentinel listens on
@@ -50,7 +50,7 @@ VaultIQ should listen on `http://localhost:8080`; Sentinel listens on
 your environment. To build and run the standalone container:
 
 ```bash
-../VaultIQ/mvnw -f pom.xml package
+./mvnw -f pom.xml package
 docker compose up --build
 ```
 
@@ -143,11 +143,11 @@ is a demonstration fixture, not a comprehensive adversarial evaluation.
 
 ## Tests
 
-Run `../VaultIQ/mvnw -f pom.xml test`. The unit tests cover PII patterns and
+Run `./mvnw -f pom.xml test`. The unit tests cover PII patterns and
 Luhn behavior, common injection patterns and a benign false-positive case,
 cost arithmetic, and the regression report path without a live model.
 
 ## License
 
 This scaffold follows the VaultIQ repository's license; see
-[../VaultIQ/LICENSE](../VaultIQ/LICENSE).
+[LICENSE](./LICENSE).
