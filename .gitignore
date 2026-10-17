@@ -6,13 +6,21 @@
 # Maven
 target/
 
+# Java build artifacts
+*.class
+/out/
+
 # IDEs
 .idea/
 .vscode/
 *.iml
+.classpath
+.project
+.settings/
 
 # Operating system
 .DS_Store
+Thumbs.db
 
 # Logs
 *.log
