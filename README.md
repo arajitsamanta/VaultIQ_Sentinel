@@ -1,5 +1,7 @@
 # VaultIQ Sentinel
 
+![VaultIQ Sentinel — guardrails for retrieval-augmented AI](assets/vaultiq-sentinel-cover.png)
+
 VaultIQ Sentinel is a Spring Boot guardrail service that proxies VaultIQ's
 `POST /api/chat` endpoint. It screens incoming prompts, redacts personally
 identifiable information (PII) before and after the upstream call, checks
